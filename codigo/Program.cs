@@ -3,7 +3,8 @@ using System.Collections.Generic;
 
 class Program
 {
-    static List<Personas> personas = new List<Personas>();
+    static List<Voluntarios> voluntarios = new List<Voluntarios>();
+    static List<Coordinadores> coordinadores = new List<Coordinadores>();
 
     static void Main()
     {
@@ -11,7 +12,7 @@ class Program
 
         do
         {
-            Console.WriteLine("\n=== ORGANIZACION SOLIDARIA ===");
+            Console.WriteLine("\nSeleccione una opción:");
             Console.WriteLine("1 - Registrar Voluntario");
             Console.WriteLine("2 - Registrar Coordinador");
             Console.WriteLine("3 - Mostrar Personas");
@@ -39,40 +40,57 @@ class Program
 
     static void RegistrarVoluntario()
     {
-        Console.Write("Nombre: ");
+        Console.WriteLine("Nombre: ");
         string nombre = Console.ReadLine();
 
-        Console.Write("DNI: ");
+        Console.WriteLine("DNI: ");
         string dni = Console.ReadLine();
 
-        Console.Write("Horas trabajadas: ");
+        Console.WriteLine("Horas trabajadas: ");
         int horasTrabajadas = int.Parse(Console.ReadLine());
+        Console.WriteLine("Voluntario registrado exitosamente.");
 
-        personas.Add(new Voluntarios(nombre, dni, horasTrabajadas));
+        voluntarios.Add(new Voluntarios(nombre, dni, horasTrabajadas));
     }
 
     static void RegistrarCoordinador()
     {
-        Console.Write("Nombre: ");
+        Console.WriteLine("Nombre: ");
         string nombre = Console.ReadLine();
 
-        Console.Write("DNI: ");
+        Console.WriteLine("DNI: ");
         string dni = Console.ReadLine();
 
-        Console.Write("Área asignada: ");
+        Console.WriteLine("Área asignada: ");
         string areaAsignada = Console.ReadLine();
 
-        Console.Write("Cantidad de personas a cargo: ");
+        Console.WriteLine("Cantidad de personas a cargo: ");
         int personasACargo = int.Parse(Console.ReadLine());
+        Console.WriteLine("Coordinador registrado exitosamente.");
 
-        personas.Add(new Coordinadores(nombre, dni, areaAsignada, personasACargo));
+        coordinadores.Add(new Coordinadores(nombre, dni, areaAsignada, personasACargo));
     }
 
     static void MostrarPersonas()
     {
-        foreach (Personas persona in personas)
+        Console.WriteLine("Desea ver a los voluntarios o a los coordinadores? (V/C)");
+        string opcion = Console.ReadLine();
+
+        if (opcion.ToUpper() == "V")
         {
-            persona.MostrarInformacion();
+            Console.WriteLine("\nLos voluntarios registrados son:");
+            foreach (Voluntarios voluntario in voluntarios)
+            {
+                voluntario.MostrarInformacion();
+            }
+        }
+        else if (opcion.ToUpper() == "C")
+        {
+            Console.WriteLine("\nLos coordinadores registrados son:");
+            foreach (Coordinadores coordinador in coordinadores)
+            {
+                coordinador.MostrarInformacion();
+            }
         }
     }
 }

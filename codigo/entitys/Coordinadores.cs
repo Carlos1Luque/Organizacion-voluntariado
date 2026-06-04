@@ -5,8 +5,7 @@ class Coordinadores : Personas
     private int personasACargo;
     public string AreaAsignada { get { return this.areaAsignada; } set { this.areaAsignada = value; } }
     public int PersonasACargo { get { return this.personasACargo; } set { this.personasACargo = value; } }
-    public Coordinadores(string nombre, string dni, string areaAsignada, int personasACargo)
-        : base(nombre, dni)
+    public Coordinadores(string nombre, string dni, string areaAsignada, int personasACargo) : base(nombre, dni)
     {
 
         AreaAsignada = areaAsignada;
