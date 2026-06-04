@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 class Program
 {
-    static List<Persona> personas = new List<Persona>();
+    static List<Personas> personas = new List<Personas>();
 
     static void Main()
     {
@@ -46,9 +46,9 @@ class Program
         string dni = Console.ReadLine();
 
         Console.Write("Horas trabajadas: ");
-        int horas = int.Parse(Console.ReadLine());
+        int horasTrabajadas = int.Parse(Console.ReadLine());
 
-        personas.Add(new Voluntario(nombre, dni, horas));
+        personas.Add(new Voluntarios(nombre, dni, horasTrabajadas));
     }
 
     static void RegistrarCoordinador()
@@ -60,19 +60,19 @@ class Program
         string dni = Console.ReadLine();
 
         Console.Write("Área asignada: ");
-        string area = Console.ReadLine();
+        string areaAsignada = Console.ReadLine();
 
         Console.Write("Cantidad de personas a cargo: ");
-        int cantidad = int.Parse(Console.ReadLine());
+        int personasACargo = int.Parse(Console.ReadLine());
 
-        personas.Add(new Coordinador(nombre, dni, area, cantidad));
+        personas.Add(new Coordinadores(nombre, dni, areaAsignada, personasACargo));
     }
 
     static void MostrarPersonas()
     {
-        foreach (Persona persona in personas)
+        foreach (Personas persona in personas)
         {
-            persona.MostrarDatos();
+            persona.MostrarInformacion();
         }
     }
 }
