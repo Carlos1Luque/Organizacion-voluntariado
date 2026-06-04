@@ -1,1 +1,2 @@
 # Organizacion-voluntariado
+desarrollar un sistema de consola que permite gestionar persona de una organización solidaria deben existir voluntarios y coordinadores los voluntarios deberán mostrar la cantidad de horas registrada los coordinadores áreas asignadas y la cantidad de personas a cargo aplicar obligatoriamente herencia, polimorfismo, abstracción, modularidad encapsulamiento, git y github.
